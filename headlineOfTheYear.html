@@ -1,0 +1,18 @@
+<head>
+  <title>Headline of the Year</title>
+</head>
+
+<body>
+    <header>
+        <h1>Headline of the Year</h1>
+        <p class="subhead">London, UK - {{prettifyDate}}</p>
+    </header>
+
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
