@@ -2,16 +2,18 @@ if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+  Template.article.helpers({
+    content: function () {
+      return {
+        'headline': 'George Harrison Memorial Tree Destroyed by Beetles',
+        'byline': 'LAURA STAMPLER',
+        'sourceUrl': 'http://time.com/3018265/george-harrison-memorial-tree-beetles/',
+        'source': 'Time.com',
+        'paragraphs': [
+          {'text': 'In a terrible case of irony, a tree planted in memory of Beatles guitarist George Harrison in Los Angeles has been destroyed by literal beetles.'},
+          {'text': 'The pine tree was planted in Griffith Park in 2004 in honor of the musician and avid gardener, who resided in LA at the end of his life.'}
+        ]
+      }
     }
   });
 

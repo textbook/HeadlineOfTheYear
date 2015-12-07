@@ -10,20 +10,7 @@
   </div>
 
   <div class="columns">
-    <div class="column">
-      <div class="headline">George Harrison Memorial Tree Destroyed by Beetles</div>
-      <div class="byline">by LAURA STAMPLER</div>
-      <div class="article">
-        <p>In a terrible case of irony, a tree planted in memory of Beatles guitarist George Harrison in Los Angeles has
-          been destroyed by literal beetles.</p>
-        <p>The pine tree was planted in Griffith Park in 2004 in honor of the musician and avid gardener, who resided in
-          LA at the end of his life.</p>
-        <p>But don’t fret. <a href="http://www.latimes.com/entertainment/music/posts/la-et-ms-george-harrison-tree-beetles-replant-20140721-story.html">According to the LA Times</a>,
-          “Except for the loss of tree life, Harrison likely would have been amused at the irony. He once said his
-          biggest break in life was getting into the Beatles; his second biggest was getting out.”</p>
-        <p>&hellip; [<a href="http://time.com/3018265/george-harrison-memorial-tree-beetles/">Time.com</a>]</p>
-      </div>
-    </div>
+    {{> article}}
   </div>
 
   <div class="footer">
@@ -33,7 +20,15 @@
   </div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="article">
+  <div class="column">
+    <div class="headline">{{content.headline}}</div>
+    <div class="byline">by {{content.byline}}</div>
+    <div class="article">
+      {{#each content.paragraphs}}
+        <div class="paragraph">{{text}}</div>
+      {{/each}}
+      <div class="paragraph">&hellip; [<a href="{{content.sourceUrl}}">{{content.source}}</a>]</div>
+    </div>
+  </div>
 </template>
