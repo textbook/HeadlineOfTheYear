@@ -1,2 +1,8 @@
+# JetBrains
 .idea/
+
+# Meteor
 .meteor/local/
+
+# Generated files
+*.css

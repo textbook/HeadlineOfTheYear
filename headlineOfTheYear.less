@@ -1,24 +1,80 @@
-/* CSS declarations go here */
-header {
-  font-family: 'Playfair Display', serif;
-  margin-before: 5px;
-  padding: 12px 0 12px 0;
-  position: relative;
-  text-align: center;
-  text-transform: uppercase;
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900,700,400');
 
-  h1 {
-    font-size: 80px;
-    font-weight: 900;
-  }
+@ink: #2f2f2f;
+@links: #686767;
+@newsprint: #f9f7f1;
 
-  .subhead {
-    border-bottom: 2px solid #2f2f2f;
-    border-top: 2px solid #2f2f2f;
+body {
+  background-color: @newsprint;
+  color: @ink;
+  font-family: serif;
+
+  a {
+    color: @links;
+    text-decoration: none;
+    text-transform: none;
   }
 }
 
-body {
-  margin: 0px;
-  padding: 0px;
+.centered {
+  text-align: center;
+}
+
+.headline-font {
+  font-family: 'Playfair Display', serif;
+}
+
+.line-out {
+  .headline-font;
+
+  border-bottom: 1px solid @ink;
+  border-top: 1px solid @ink;
+  line-height: 2em;
+}
+
+.masthead {
+  .centered;
+
+
+  .title {
+    .headline-font;
+
+    font-size: 72px;
+    font-weight: 900;
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .publication {
+    .line-out;
+  }
+}
+
+.columns {
+  display: inline-block;
+  width: 90%;
+
+  .column {
+    margin: 15px 0 15px 0;
+    padding: 0 15px 0 15px;
+    width: 33%;
+
+    .byline {
+      font-size: 14px;
+      padding: 10px 0 10px 0;
+      text-align: center;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+}
+
+.footer {
+  .centered;
+  .line-out;
 }

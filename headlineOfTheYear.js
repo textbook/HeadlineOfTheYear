@@ -15,8 +15,9 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.registerHelper("prettifyDate", function(timestamp) {
-    return (timestamp ? moment(timestamp) : moment()).format('dddd MMMM D, YYYY');
+  Template.registerHelper("prettifyDate", function (format, timestamp) {
+    format = format ? format : 'dddd, MMMM D, YYYY';
+    return (timestamp ? moment(timestamp) : moment()).format(format);
   });
 }
 
