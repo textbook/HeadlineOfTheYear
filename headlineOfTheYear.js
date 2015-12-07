@@ -1,12 +1,9 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
   Template.article.helpers({
     content: function () {
       return {
         'headline': 'George Harrison Memorial Tree Destroyed by Beetles',
-        'byline': 'LAURA STAMPLER',
+        'byline': 'Laura Stampler',
         'sourceUrl': 'http://time.com/3018265/george-harrison-memorial-tree-beetles/',
         'source': 'Time.com',
         'paragraphs': [
@@ -17,9 +14,12 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.registerHelper("prettifyDate", function (format, timestamp) {
-    format = format ? format : 'dddd, MMMM D, YYYY';
-    return (timestamp ? moment(timestamp) : moment()).format(format);
+  Template.registerHelper('prettifyDate', function (format, timestamp) {
+    return (timestamp ? moment(timestamp) : moment()).format(format ? format : 'dddd, MMMM D, YYYY');
+  });
+
+  Template.registerHelper('uppercase', function (text) {
+    return text.toUpperCase();
   });
 }
 

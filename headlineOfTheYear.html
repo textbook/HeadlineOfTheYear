@@ -23,7 +23,7 @@
 <template name="article">
   <div class="column">
     <div class="headline">{{content.headline}}</div>
-    <div class="byline">by {{content.byline}}</div>
+    <div class="byline">by {{uppercase content.byline}}</div>
     <div class="article">
       {{#each content.paragraphs}}
         <div class="paragraph">{{text}}</div>
