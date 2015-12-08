@@ -5,12 +5,16 @@
 <body>
   <div class="masthead">
     <div class="title">Headline of the Year</div>
-    <div class="publication">London, UK &mdash; {{prettifyDate}} &mdash; <a href="https://twitter.com/HeadlineOfTheYr">@HeadlineOfTheYr</a>
+    <div class="publication">London, UK
+      &mdash; {{prettifyDate 'dddd, MMMM D, YYYY'}}
+      &mdash; <a href="https://twitter.com/HeadlineOfTheYr">@HeadlineOfTheYr</a>
     </div>
   </div>
 
   <div class="columns">
-    {{> article}}
+    {{#each articles}}
+      {{> article}}
+    {{/each}}
   </div>
 
   <div class="footer">
@@ -22,13 +26,13 @@
 
 <template name="article">
   <div class="column">
-    <div class="headline">{{content.headline}}</div>
-    <div class="byline">by {{uppercase content.byline}}</div>
+    <div class="headline">{{headline}}</div>
+    <div class="byline">by {{uppercase byline}}</div>
     <div class="article">
-      {{#each content.paragraphs}}
+      {{#each paragraphs}}
         <div class="paragraph">{{text}}</div>
       {{/each}}
-      <div class="paragraph">&hellip; [<a href="{{content.sourceUrl}}">{{content.source}}</a>]</div>
+      <div class="paragraph">&hellip; [<a href="{{sourceUrl}}">{{source}}</a>]</div>
     </div>
   </div>
 </template>
