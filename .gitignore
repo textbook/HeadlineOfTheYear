@@ -1,8 +1,8 @@
 # JetBrains
 .idea/
 
-# Meteor
-.meteor/local/
-
 # Generated files
 *.css
+
+# Mac
+.DS_Store
