@@ -18,7 +18,7 @@
   </div>
 
   <div class="footer">
-    &copy; 2015-{{prettifyDate 'YYYY'}} <a href="https://hello.jonrshar.pe">Jonathan Sharpe</a>
+    Site design &copy; 2015-{{prettifyDate 'YYYY'}} <a href="https://hello.jonrshar.pe">Jonathan Sharpe</a>
     &mdash; Powered by <a href="https://www.meteor.com/">Meteor</a>
     &mdash; <a href="https://github.com/textbook/headlineOfTheYear">Fork me on Github</a>
   </div>
@@ -29,7 +29,7 @@
     <div class="headline">{{headline}}</div>
     <div class="byline">by {{uppercase byline}}</div>
     <div class="article">
-      {{#each paragraphs}}
+      {{#each text in paragraphs}}
         <div class="paragraph">{{text}}</div>
       {{/each}}
       <div class="paragraph">&hellip; [<a href="{{sourceUrl}}">{{source}}</a>]</div>
