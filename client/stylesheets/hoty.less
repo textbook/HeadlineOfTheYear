@@ -30,6 +30,7 @@ body {
   border-bottom: 1px solid @ink;
   border-top: 1px solid @ink;
   line-height: 2em;
+  width: 100%;
 }
 
 .masthead {
@@ -52,33 +53,72 @@ body {
 }
 
 .columns {
-  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
   width: 90%;
 
   .column {
-    margin: 15px 0 15px 0;
+    float: left;
     padding: 0 15px 0 15px;
-    width: 33%;
+    width: 30%;
 
-    .byline {
-      font-size: 14px;
-      padding: 10px 0 10px 0;
-      text-align: center;
-    }
+    .article {
 
-    .headline {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      font-weight: 700;
-    }
+      margin-bottom: 25px;
 
-    .paragraph {
-      margin-bottom: 15px;
+      .byline {
+        font-size: 14px;
+        margin: 15px auto;
+        text-align: center;
+
+        &:after, &:before {
+          content: '';
+          display: block;
+          height: 5px;
+          margin: 0 auto;
+          width: 25%;
+        }
+
+        &:after {
+          border-bottom: solid 1px @ink;
+        }
+
+        &:before {
+          border-top: solid 1px @ink;
+        }
+      }
+
+      .headline {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .paragraph {
+        margin-bottom: 15px;
+      }
+
+      .year {
+        font-weight: 900;
+      }
     }
+  }
+}
+
+#history {
+  .subtitle {
+    .headline-font;
+
+    font-size: 42px;
+    margin: 25px 0;
   }
 }
 
 .footer {
   .centered;
   .line-out;
+
+  clear: both;
+  display: block;
+  float: none;
 }

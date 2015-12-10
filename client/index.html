@@ -12,9 +12,14 @@
   </div>
 
   <div class="columns">
-    {{#each articles}}
-      {{> article}}
-    {{/each}}
+    <div class="column"></div>
+    <div class="column"></div>
+    <div class="column" id="history">
+      <div class="subtitle">Great Headlines of History</div>
+      {{#each articles}}
+        {{> article}}
+      {{/each}}
+    </div>
   </div>
 
   <div class="footer">
@@ -25,7 +30,8 @@
 </body>
 
 <template name="article">
-  <div class="column">
+  <div class="article">
+    <div class="year">{{year}}</div>
     <div class="headline">{{headline}}</div>
     <div class="byline">by {{uppercase byline}}</div>
     <div class="article">
