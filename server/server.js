@@ -1,12 +1,12 @@
 if (Meteor.isServer) {
 
-  Articles = new Mongo.Collection('articles');
+  HistoricalArticles = new Mongo.Collection('historical-articles');
 
   Meteor.startup(function () {
     // code to run on server at startup
-    Articles.remove({});
+    HistoricalArticles.remove({});
 
-    Articles.insert({
+    HistoricalArticles.insert({
       year: 2014,
       headline: 'George Harrison Memorial Tree Destroyed by Beetles',
       byline: 'Laura Stampler',
@@ -18,7 +18,7 @@ if (Meteor.isServer) {
       ]
     });
 
-    Articles.insert({
+    HistoricalArticles.insert({
       year: 1983,
       headline: 'Headless Body in Topless Bar',
       byline: 'Vincent A. Musetto',
@@ -30,8 +30,8 @@ if (Meteor.isServer) {
     });
   });
 
-  Meteor.publish('all-articles', function () {
-    return Articles.find();
+  Meteor.publish('all-historical-articles', function () {
+    return HistoricalArticles.find();
   });
 
 }

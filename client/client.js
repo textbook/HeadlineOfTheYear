@@ -1,11 +1,11 @@
 if (Meteor.isClient) {
-  Articles = new Mongo.Collection('articles');
+  HistoricalArticles = new Mongo.Collection('historical-articles');
 
-  Meteor.subscribe('all-articles');
+  Meteor.subscribe('all-historical-articles');
 
-  Template.body.helpers({
+  Template.historical.helpers({
     articles: function () {
-      return Articles.find().fetch();
+      return HistoricalArticles.find().fetch();
     }
   });
 

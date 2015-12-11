@@ -14,12 +14,7 @@
   <div class="columns">
     <div class="column"></div>
     <div class="column"></div>
-    <div class="column" id="history">
-      <div class="subtitle">Great Headlines of History</div>
-      {{#each articles}}
-        {{> article}}
-      {{/each}}
-    </div>
+    {{> historical}}
   </div>
 
   <div class="footer">
@@ -28,6 +23,15 @@
     &mdash; <a href="https://github.com/textbook/headlineOfTheYear">Fork me on Github</a>
   </div>
 </body>
+
+<template name="historical">
+  <div class="column" id="history">
+    <div class="subtitle">Great Headlines of History</div>
+    {{#each articles}}
+      {{> article}}
+    {{/each}}
+  </div>
+</template>
 
 <template name="article">
   <div class="article">
