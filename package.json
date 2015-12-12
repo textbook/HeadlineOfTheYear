@@ -1,0 +1,26 @@
+{
+  "name": "headline-of-the-year",
+  "version": "0.0.1",
+  "description": "A [Meteor]-based web application for tracking the finest examples of the  sub-editor's art. Eventually, I'm aiming to allow users to compare pairs of  headlines, figuring out which are the most popular for a given year.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "velocity-cli": "^0.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "velocity test-app --ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/textbook/headlineOfTheYear.git"
+  },
+  "author": "Jonathan Sharpe <mail@jonrshar.pe>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/textbook/headlineOfTheYear/issues"
+  },
+  "homepage": "https://github.com/textbook/headlineOfTheYear#readme"
+}

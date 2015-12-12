@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "4.1.0"
+before_install:
+  - "curl https://install.meteor.com/ | sh"
+services:
+  - mongodb
