@@ -7,6 +7,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "cucumber": "^0.9.2",
     "velocity-cli": "^0.4.3"
   },
   "devDependencies": {},
